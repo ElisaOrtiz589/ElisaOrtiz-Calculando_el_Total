@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafío 1 - JavaScript</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <section>
+    <div class="card">
+      <div class="img_card"></div>
+        <h6>Laptop Gamer AMD</h6>
+        <p>Precio base: $
+          <span class="precio_inicial"></span> 
+        </p>
+        
+        <!-- CANTIDAD -->
+        <p>Cantidad:
+          <span class="cantidad">0</span>
+
+          <!-- BOTONES -->
+          <!-- BOTÓN AUMENTAR -->
+          <button onclick="
+            
+            // LEER LA CANTIDAD ACTUAL
+            let cantidadElemento = document.querySelector('.cantidad'); 
+
+            // CONVERTIR A NÚMERO
+            let cantidad = Number(cantidadElemento.innerHTML); 
+
+            // AUMENTAR LA CANTIDAD
+            cantidad = cantidad + 1; 
+
+            // MOSTRAR LA NUEVA CANTIDAD
+            cantidadElemento.innerHTML = cantidad; 
+
+            // CALCULAR EL NUEVO TOTAL
+            let nuevoTotal = cantidad * precio;
+
+            // MOSTRAR EL NUEVO TOTAL
+            document.querySelector('.valor_total').innerHTML = nuevoTotal;
+          ">+</button>
+
+          <!-- BOTÓN DISMINUIR -->
+          <button onclick="  
+            // LEER LA CANTIDAD ACTUAL
+            let cantidadElemento = document.querySelector('.cantidad');
+            // CONVERTIR A NÚMERO
+            cantidad = Number(cantidadElemento.innerHTML);
+            // DISMINUIR LA CANTIDAD
+            cantidad = cantidad - 1;
+            // MOSTRAR LA NUEVA CANTIDAD
+            cantidadElemento.innerHTML = cantidad;
+             // MOSTRAR EL NUEVO TOTAL
+            document.querySelector('.valor_total').innerHTML = cantidad * precio;
+          ">-</button>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOTAL -->
+  <div class="total_section">
+    <p>Total a pagar: $
+      <span class="valor_total"></span> 
+    </p>
+  </div>
+
+  <!-- JS -->
+  <script src="index.js">
+  </script>
+</body>
+</html>
